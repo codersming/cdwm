@@ -1,10 +1,12 @@
-config.h
-autostart.sh
-statusbar/
+#config.h
+#autostart.sh
+#statusbar/
 
 result/
 dwm
 *.o
+*.rej
+*.orig
 .ccls-cache/
 compile_commands.json
 .cache
