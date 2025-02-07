@@ -22,7 +22,7 @@ with_bluetooth() {
 }
 
 update() {
-  icons=("🍄")
+  icons=("💖")
   with_daed
   # with_bluetooth
 
