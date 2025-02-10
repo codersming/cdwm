@@ -211,8 +211,8 @@ static Key keys[] = {
     TAGKEYS(XK_4, 3, "wps")
     TAGKEYS(XK_c, 4, "microsoft-edge-stable")
     TAGKEYS(XK_5, 4, "microsoft-edge-stable")
-    TAGKEYS(XK_m, 5, "~/Download/MyArch/scripts/music_player.sh")
-    TAGKEYS(XK_6, 5, "~/Download/MyArch/scripts/music_player.sh")
+    TAGKEYS(XK_m, 5, "~/Downloads/reinterpret_castMyArch/scripts/music_player.sh")
+    TAGKEYS(XK_6, 5, "~/Downloads/MyArch/scripts/music_player.sh")
     TAGKEYS(XK_7, 6, "linuxqq")
     TAGKEYS(XK_w, 7, "wechat.sh")
     TAGKEYS(XK_8, 7, "wechat.sh")
@@ -240,8 +240,8 @@ static Button buttons[] = {
     { ClkStatusText,       0,               Button5,          clickstatusbar,{0} },                                   // 鼠标滚轮下  |  状态栏       |  根据状态栏的信号执行 ~/scripts/dwmstatusbar.sh $signal D
                                                                                                                       //
     /* 点击bar空白处 */
-    { ClkBarEmpty,         0,               Button1,          spawn, SHCMD("~/Download/MyArch/scripts/call_rofi.sh window") },        // 左键        |  bar空白处    |  rofi 执行 window
-    { ClkBarEmpty,         0,               Button3,          spawn, SHCMD("~/Download/MyArch/scripts/call_rofi.sh drun") },          // 右键        |  bar空白处    |  rofi 执行 drun
+    { ClkBarEmpty,         0,               Button1,          spawn, SHCMD("~/Downloads/MyArch/scripts/call_rofi.sh window") },        // 左键        |  bar空白处    |  rofi 执行 window
+    { ClkBarEmpty,         0,               Button3,          spawn, SHCMD("~/Downloads/MyArch/scripts/call_rofi.sh drun") },          // 右键        |  bar空白处    |  rofi 执行 drun
                                                                                                                       //
     /* 鼠标在空白处或任意窗口上 上下滚动 切换tag */
     { ClkRootWin,          MODKEY,          Button4,          viewtoleft,    {0} },                                   // super+滚轮上  |  Any          |  向前切换tag
