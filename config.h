@@ -199,7 +199,7 @@ static Key keys[] = {
     { MODKEY,              XK_n,      spawn, SHCMD("$DWM/DEF/blurlock.sh") },                                   /* super n          | 锁定屏幕               */
     { MODKEY|ShiftMask,    XK_Up,     spawn, SHCMD("$DWM/DEF/set_vol.sh up") },                                 /* super shift up   | 音量加                 */
     { MODKEY|ShiftMask,    XK_Down,   spawn, SHCMD("$DWM/DEF/set_vol.sh down") },                               /* super shift down | 音量减                 */
-    { MODKEY|ShiftMask,    XK_a,      spawn, SHCMD("flameshot gui -c -p ~/Picture/screenshots") },             /* super shift a    | 截图                   */
+    { MODKEY|ShiftMask,    XK_a,      spawn, SHCMD("flameshot gui -c -p ~/Pictures/screenshots") },             /* super shift a    | 截图                   */
     { MODKEY|ShiftMask,    XK_q,      spawn, SHCMD("kill -9 $(xprop | grep _NET_WM_PID | awk '{print $3}')") }, /* super shift q    | 选中某个窗口并强制kill */
 
     /* super key : 跳转到对应tag (可附加一条命令 若目标目录无窗口，则执行该命令) */
@@ -211,7 +211,7 @@ static Key keys[] = {
     TAGKEYS(XK_4, 3, "wps")
     TAGKEYS(XK_c, 4, "microsoft-edge-stable")
     TAGKEYS(XK_5, 4, "microsoft-edge-stable")
-    TAGKEYS(XK_m, 5, "~/Downloads/reinterpret_castMyArch/scripts/music_player.sh")
+    TAGKEYS(XK_m, 5, "~/Downloads/MyArch/scripts/music_player.sh")
     TAGKEYS(XK_6, 5, "~/Downloads/MyArch/scripts/music_player.sh")
     TAGKEYS(XK_7, 6, "linuxqq")
     TAGKEYS(XK_w, 7, "wechat.sh")
