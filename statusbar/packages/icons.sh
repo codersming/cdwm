@@ -52,7 +52,7 @@ click() {
   case "$1" in
   L)
     notify
-    feh --randomize --bg-fill ~/Pictures/wallpaper/*.png
+    feh --randomize --bg-fill ~/Pictures/wallpaper/*
     ;;
   R) call_menu ;;
   esac

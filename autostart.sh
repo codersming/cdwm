@@ -24,7 +24,7 @@ daemons() {
   flameshot &                                                # 截图要跑一个程序在后台 不然无法将截图保存到剪贴板
   dunst -conf ~/Downloads/MyArch/scripts/config/dunst.conf & # 开启通知server
   #picom --experimental-backends --config ~/Downloads/MyArch/scripts/config/picom.conf >> /dev/null 2>&1 & # 开启picom
-  #picom --config ~/Downloads/MyArch/scripts/config/picom.conf >> /dev/null 2>&1 & # 开启picom
+  #picom --animations -b --config ~/Downloads/MyArch/scripts/config/picom.conf >>/dev/null 2>&1 & # 开启picom
   picom --animations -b --config ~/Downloads/MyArch/scripts/config/picom.conf.back >>/dev/null 2>&1 &
 }
 
@@ -32,8 +32,8 @@ cron() {
   [ $1 ] && sleep $1
   let i=10
   while true; do
-    [ $((i % 10)) -eq 0 ] && ~/Downloads/MyArch/scripts/set_screen.sh check        # 每10秒检查显示器状态 以此自动设置显示器
-    [ $((i % 300)) -eq 0 ] && feh --randomize --bg-fill ~/Pictures/wallpaper/*.png # 每300秒更新壁纸
+    [ $((i % 10)) -eq 0 ] && ~/Downloads/MyArch/scripts/set_screen.sh check    # 每10秒检查显示器状态 以此自动设置显示器
+    [ $((i % 300)) -eq 0 ] && feh --randomize --bg-fill ~/Pictures/wallpaper/* # 每300秒更新壁纸
     sleep 10
     let i+=10
   done

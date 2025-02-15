@@ -56,12 +56,15 @@ static const char *tags[] = {
     "🐓₁", // tag:0  key:1  desc:terminal1
     "🐬₂", // tag:1  key:2  desc:terminal2
     "🦋₃", // tag:2  key:3  desc:terminal3
-    "🇼₄", // tag:3  key:9  desc:obs
-    "🌏₅", // tag:4  key:c  desc:edge
+    "🇼₄", // tag:3  key:9  desc:wps
+    "🌏₅", // tag:4  key:b  desc:edge
     "🎸₆", // tag:5  key:m  desc:music
     "🐧₇", // tag:6  key:0  desc:qq
     "👫₈", // tag:7  key:w  desc:wechat
-    "🪔₉", // tag:8  key:l  desc:wxwork
+   // "🪔₉", // tag:8  key:l  desc:wxwork
+    //"☔₁₀", // tag:9 key:c  desc:terminal2
+    "☔₉", // tag:8  key:l  desc:wxwork
+  
 };
 
 /* 自定义窗口显示规则 */
@@ -155,15 +158,15 @@ static Key keys[] = {
     { MODKEY,              XK_u,            toggleborder,     {0} },                     /* super u            |  开启/关闭 边框 */
     { MODKEY,              XK_e,            incnmaster,       {.i = +1} },               /* super e            |  改变主工作区窗口数量 (1 2中切换) */
 
-    { MODKEY,              XK_b,            focusmon,         {.i = +1} },               /* super b            |  光标移动到另一个显示器 */
-    { MODKEY|ShiftMask,    XK_b,            tagmon,           {.i = +1} },               /* super shift b      |  将聚焦窗口移动到另一个显示器 */
+    //{ MODKEY,              XK_b,            focusmon,         {.i = +1} },               /* super b            |  光标移动到另一个显示器 */
+    //{ MODKEY|ShiftMask,    XK_b,            tagmon,           {.i = +1} },               /* super shift b      |  将聚焦窗口移动到另一个显示器 */
 
     { MODKEY,              XK_q,            killclient,       {0} },                     /* super q            |  关闭窗口 */
     { MODKEY|ControlMask,  XK_q,            forcekillclient,  {0} },                     /* super ctrl q       |  强制关闭窗口(处理某些情况下无法销毁的窗口) */
     { MODKEY|ControlMask,  XK_F12,          quit,             {0} },                     /* super ctrl f12     |  退出dwm */
 
-	{ MODKEY|ShiftMask,    XK_space,        selectlayout,     {.v = &layouts[1]} },      /* super shift space  |  切换到网格布局 */
-	{ MODKEY,              XK_o,            showonlyorall,    {0} },                     /* super o            |  切换 只显示一个窗口 / 全部显示 */
+	  { MODKEY|ShiftMask,    XK_space,        selectlayout,     {.v = &layouts[1]} },      /* super shift space  |  切换到网格布局 */
+	  { MODKEY,              XK_o,            showonlyorall,    {0} },                     /* super o            |  切换 只显示一个窗口 / 全部显示 */
 
     { MODKEY|ControlMask,  XK_equal,        setgap,           {.i = -6} },               /* super ctrl +       |  窗口增大 */
     { MODKEY|ControlMask,  XK_minus,        setgap,           {.i = +6} },               /* super ctrl -       |  窗口减小 */
@@ -209,13 +212,15 @@ static Key keys[] = {
     TAGKEYS(XK_2, 1, 0)
     TAGKEYS(XK_3, 2, 0)
     TAGKEYS(XK_4, 3, "wps")
-    TAGKEYS(XK_c, 4, "microsoft-edge-stable")
+    TAGKEYS(XK_b, 4, "microsoft-edge-stable")
     TAGKEYS(XK_5, 4, "microsoft-edge-stable")
     TAGKEYS(XK_m, 5, "~/Downloads/MyArch/scripts/music_player.sh")
     TAGKEYS(XK_6, 5, "~/Downloads/MyArch/scripts/music_player.sh")
     TAGKEYS(XK_7, 6, "linuxqq")
     TAGKEYS(XK_w, 7, "wechat.sh")
     TAGKEYS(XK_8, 7, "wechat.sh")
+    TAGKEYS(XK_9, 8, "code")
+    TAGKEYS(XK_c, 8, "code")
 };
 
 static Button buttons[] = {
@@ -228,10 +233,10 @@ static Button buttons[] = {
     { ClkClientWin,        MODKEY,          Button3,          resizemouse,   {0} },                                   // super+右键  |  拖拽窗口     |  改变窗口大小
     /* 点击tag操作 */
     { ClkTagBar,           0,               Button1,          view,          {0} },                                   // 左键        |  点击tag      |  切换tag
-	{ ClkTagBar,           0,               Button3,          toggleview,    {0} },                                   // 右键        |  点击tag      |  切换是否显示tag
+	  { ClkTagBar,           0,               Button3,          toggleview,    {0} },                                   // 右键        |  点击tag      |  切换是否显示tag
     { ClkTagBar,           MODKEY,          Button1,          tag,           {0} },                                   // super+左键  |  点击tag      |  将窗口移动到对应tag
     { ClkTagBar,           0,               Button4,          viewtoleft,    {0} },                                   // 鼠标滚轮上  |  tag          |  向前切换tag
-	{ ClkTagBar,           0,               Button5,          viewtoright,   {0} },                                   // 鼠标滚轮下  |  tag          |  向后切换tag
+	  { ClkTagBar,           0,               Button5,          viewtoright,   {0} },                                   // 鼠标滚轮下  |  tag          |  向后切换tag
     /* 点击状态栏操作 */
     { ClkStatusText,       0,               Button1,          clickstatusbar,{0} },                                   // 左键        |  点击状态栏   |  根据状态栏的信号执行 ~/scripts/dwmstatusbar.sh $signal L
     { ClkStatusText,       0,               Button2,          clickstatusbar,{0} },                                   // 中键        |  点击状态栏   |  根据状态栏的信号执行 ~/scripts/dwmstatusbar.sh $signal M
