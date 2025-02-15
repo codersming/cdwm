@@ -44,7 +44,7 @@ call_menu() {
   " 关机") poweroff ;;
   " 重启") reboot ;;
   " 休眠") systemctl hibernate ;;
-  " 锁定") ~/Download/MyArch/scripts/blurlock.sh ;;
+  " 锁定") ~/Downloads/MyArch/scripts/blurlock.sh ;;
   esac
 }
 
